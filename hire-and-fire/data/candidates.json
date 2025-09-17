@@ -1,0 +1,230 @@
+[
+  {
+    "id": 1,
+    "filename": "sarah_chen_resume.pdf",
+    "profile": {
+      "name": "Sarah Chen",
+      "email": "sarah.chen@email.com",
+      "phone": "(555) 123-4567",
+      "location": "San Francisco, CA",
+      "total_experience_years": 5,
+      "education": {
+        "degree": "Master of Science",
+        "field": "Computer Science",
+        "institution": "Stanford University",
+        "graduation_year": 2019
+      },
+      "work_experience": [
+        {
+          "company": "Google",
+          "position": "Senior Machine Learning Engineer",
+          "duration": "2021-2024",
+          "description": "Led development of recommendation systems serving 100M+ users. Built and deployed deep learning models using TensorFlow and PyTorch on GCP."
+        },
+        {
+          "company": "Airbnb",
+          "position": "ML Engineer",
+          "duration": "2019-2021",
+          "description": "Developed pricing optimization models and fraud detection systems. Worked with large-scale data processing using Apache Spark."
+        }
+      ],
+      "skills": [
+        {"name": "Python", "level": "expert", "years_experience": 5},
+        {"name": "TensorFlow", "level": "expert", "years_experience": 4},
+        {"name": "PyTorch", "level": "expert", "years_experience": 3},
+        {"name": "AWS", "level": "intermediate", "years_experience": 2},
+        {"name": "GCP", "level": "expert", "years_experience": 4},
+        {"name": "Deep Learning", "level": "expert", "years_experience": 4},
+        {"name": "Computer Vision", "level": "expert", "years_experience": 3},
+        {"name": "MLOps", "level": "expert", "years_experience": 3},
+        {"name": "Apache Spark", "level": "intermediate", "years_experience": 3},
+        {"name": "SQL", "level": "expert", "years_experience": 5}
+      ],
+      "projects": [
+        "Real-time recommendation engine handling 1M+ requests/day",
+        "Computer vision model for autonomous driving (98.5% accuracy)",
+        "End-to-end MLOps pipeline reducing model deployment time by 70%"
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "filename": "marcus_rodriguez_resume.pdf",
+    "profile": {
+      "name": "Marcus Rodriguez",
+      "email": "marcus.rodriguez@email.com",
+      "phone": "(555) 234-5678",
+      "location": "Austin, TX",
+      "total_experience_years": 7,
+      "education": {
+        "degree": "Ph.D.",
+        "field": "Statistics",
+        "institution": "University of Texas at Austin",
+        "graduation_year": 2017
+      },
+      "work_experience": [
+        {
+          "company": "Microsoft",
+          "position": "Principal ML Scientist",
+          "duration": "2020-2024",
+          "description": "Research and development of NLP models for Azure Cognitive Services. Published 8 papers in top-tier conferences."
+        },
+        {
+          "company": "Netflix",
+          "position": "Senior Data Scientist",
+          "duration": "2017-2020",
+          "description": "Built recommendation algorithms and A/B testing frameworks. Improved user engagement by 25%."
+        }
+      ],
+      "skills": [
+        {"name": "Python", "level": "expert", "years_experience": 7},
+        {"name": "R", "level": "expert", "years_experience": 8},
+        {"name": "TensorFlow", "level": "expert", "years_experience": 5},
+        {"name": "PyTorch", "level": "expert", "years_experience": 4},
+        {"name": "Azure", "level": "expert", "years_experience": 4},
+        {"name": "Statistics", "level": "expert", "years_experience": 10},
+        {"name": "NLP", "level": "expert", "years_experience": 5},
+        {"name": "A/B Testing", "level": "expert", "years_experience": 6},
+        {"name": "MLOps", "level": "intermediate", "years_experience": 3},
+        {"name": "Transformers", "level": "expert", "years_experience": 3}
+      ],
+      "projects": [
+        "BERT-based language model achieving SOTA results on 3 NLP benchmarks",
+        "Real-time personalization engine serving 200M+ Netflix users",
+        "Statistical framework for causal inference in observational data"
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "filename": "aisha_patel_resume.pdf",
+    "profile": {
+      "name": "Aisha Patel",
+      "email": "aisha.patel@email.com",
+      "phone": "(555) 345-6789",
+      "location": "New York, NY",
+      "total_experience_years": 3,
+      "education": {
+        "degree": "Bachelor of Science",
+        "field": "Mathematics",
+        "institution": "MIT",
+        "graduation_year": 2021
+      },
+      "work_experience": [
+        {
+          "company": "JPMorgan Chase",
+          "position": "ML Engineer",
+          "duration": "2021-2024",
+          "description": "Developed risk assessment models and algorithmic trading systems. Worked with time-series data and financial modeling."
+        }
+      ],
+      "skills": [
+        {"name": "Python", "level": "expert", "years_experience": 4},
+        {"name": "scikit-learn", "level": "expert", "years_experience": 3},
+        {"name": "TensorFlow", "level": "intermediate", "years_experience": 2},
+        {"name": "AWS", "level": "intermediate", "years_experience": 2},
+        {"name": "Statistics", "level": "expert", "years_experience": 5},
+        {"name": "Linear Algebra", "level": "expert", "years_experience": 6},
+        {"name": "Time Series Analysis", "level": "expert", "years_experience": 3},
+        {"name": "SQL", "level": "expert", "years_experience": 3},
+        {"name": "Docker", "level": "intermediate", "years_experience": 2},
+        {"name": "Financial Modeling", "level": "expert", "years_experience": 3}
+      ],
+      "projects": [
+        "Credit risk model reducing default prediction error by 15%",
+        "High-frequency trading algorithm with 12% annual return",
+        "Real-time fraud detection system with 99.2% accuracy"
+      ]
+    }
+  },
+  {
+    "id": 4,
+    "filename": "james_kim_resume.pdf",
+    "profile": {
+      "name": "James Kim",
+      "email": "james.kim@email.com",
+      "phone": "(555) 456-7890",
+      "location": "Seattle, WA",
+      "total_experience_years": 2,
+      "education": {
+        "degree": "Master of Science",
+        "field": "Data Science",
+        "institution": "University of Washington",
+        "graduation_year": 2022
+      },
+      "work_experience": [
+        {
+          "company": "Amazon",
+          "position": "ML Engineer I",
+          "duration": "2022-2024",
+          "description": "Built recommendation systems for Amazon Prime Video. Experience with large-scale distributed systems and real-time inference."
+        }
+      ],
+      "skills": [
+        {"name": "Python", "level": "intermediate", "years_experience": 3},
+        {"name": "PyTorch", "level": "intermediate", "years_experience": 2},
+        {"name": "AWS", "level": "expert", "years_experience": 2},
+        {"name": "Kubernetes", "level": "intermediate", "years_experience": 1},
+        {"name": "Apache Spark", "level": "intermediate", "years_experience": 2},
+        {"name": "Deep Learning", "level": "intermediate", "years_experience": 2},
+        {"name": "SQL", "level": "intermediate", "years_experience": 3},
+        {"name": "Git", "level": "expert", "years_experience": 4},
+        {"name": "Docker", "level": "intermediate", "years_experience": 2},
+        {"name": "MLOps", "level": "beginner", "years_experience": 1}
+      ],
+      "projects": [
+        "Video recommendation system improving watch time by 18%",
+        "Real-time content classification using CNNs",
+        "A/B testing framework for ML model evaluation"
+      ]
+    }
+  },
+  {
+    "id": 5,
+    "filename": "elena_volkov_resume.pdf",
+    "profile": {
+      "name": "Elena Volkov",
+      "email": "elena.volkov@email.com",
+      "phone": "(555) 567-8901",
+      "location": "Boston, MA",
+      "total_experience_years": 4,
+      "education": {
+        "degree": "Ph.D.",
+        "field": "Physics",
+        "institution": "Harvard University",
+        "graduation_year": 2020
+      },
+      "work_experience": [
+        {
+          "company": "Tesla",
+          "position": "Senior ML Engineer",
+          "duration": "2022-2024",
+          "description": "Developed computer vision models for autonomous driving. Led team of 5 engineers working on perception systems."
+        },
+        {
+          "company": "Boston Dynamics",
+          "position": "Research Scientist",
+          "duration": "2020-2022",
+          "description": "Applied machine learning to robotics control systems. Published research on reinforcement learning for robotic manipulation."
+        }
+      ],
+      "skills": [
+        {"name": "Python", "level": "expert", "years_experience": 6},
+        {"name": "PyTorch", "level": "expert", "years_experience": 4},
+        {"name": "Computer Vision", "level": "expert", "years_experience": 4},
+        {"name": "Reinforcement Learning", "level": "expert", "years_experience": 3},
+        {"name": "C++", "level": "intermediate", "years_experience": 5},
+        {"name": "CUDA", "level": "intermediate", "years_experience": 2},
+        {"name": "OpenCV", "level": "expert", "years_experience": 4},
+        {"name": "ROS", "level": "expert", "years_experience": 3},
+        {"name": "Linear Algebra", "level": "expert", "years_experience": 8},
+        {"name": "Physics", "level": "expert", "years_experience": 10}
+      ],
+      "projects": [
+        "Autonomous vehicle perception system achieving 99.9% object detection accuracy",
+        "Reinforcement learning agent for robotic arm manipulation",
+        "Real-time 3D object tracking system for manufacturing"
+      ]
+    }
+  }
+]

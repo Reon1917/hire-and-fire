@@ -1,0 +1,9 @@
+Elena Volkov - Senior ML Engineer Resume
+=========================================
+
+Experience: 4 years
+Skills: Python, PyTorch, Computer Vision
+Education: Ph.D. Physics, Harvard
+
+This is a sample file to test the demo upload functionality.
+The system will map this to Elena Volkov's profile from our mock candidates.json

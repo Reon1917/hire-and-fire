@@ -1,84 +1,54 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Link from "next/link";
 import { Check } from "lucide-react";
 
 export default function Pricing() {
   const plans = [
     {
-      name: "Free",
-      price: "Free",
-      period: "forever",
-      description: "Perfect for trying out our AI screening technology",
+      name: "Starter",
+      price: "฿999",
+      period: "/month",
+      description: "Perfect for small businesses just getting started",
       features: [
-        "50 resume screenings/month",
-        "Up to 3 job postings",
-        "Basic AI matching",
+        "50 resume analyses / month",
+        "Basic ranking & scoring",
         "Email support",
-        "Standard templates",
-        "Basic analytics"
+        "1 company profile"
       ],
-      cta: "Start Free",
+      cta: "Start Free Trial",
       popular: false,
       href: "/dashboard"
     },
     {
-      name: "Starter",
-      price: "$27.99",
-      period: "per month",
-      description: "Perfect for small businesses just getting started",
+      name: "Professional",
+      price: "฿2,499",
+      period: "/month",
+      description: "Ideal for growing businesses with higher volume",
       features: [
-        "1,000 resume screenings/month",
-        "Up to 10 job postings",
-        "Advanced AI matching",
-        "Email support",
-        "Custom templates",
-        "Analytics dashboard",
-        "PDF export",
-        "Priority processing"
+        "200 resume analyses / month",
+        "Advanced analytics dashboard",
+        "API access + Priority support",
+        "Up to 3 company profiles",
+        "Custom scoring criteria"
       ],
       cta: "Start Free Trial",
       popular: true,
       href: "/dashboard"
     },
     {
-      name: "Professional",
-      price: "$69.99",
-      period: "per month",
-      description: "Ideal for growing businesses with higher volume",
-      features: [
-        "5,000 resume screenings/month",
-        "Unlimited job postings",
-        "Advanced AI matching",
-        "Priority support",
-        "Custom screening criteria",
-        "Advanced analytics & reporting",
-        "Team collaboration tools",
-        "API access",
-        "Custom branding"
-      ],
-      cta: "Start Free Trial",
-      popular: false,
-      href: "/dashboard"
-    },
-    {
       name: "Enterprise",
-      price: "$169.99",
-      period: "per month",
+      price: "฿4,999",
+      period: "/month",
       description: "For large teams with enterprise-level needs",
       features: [
-        "12,000 resume screenings/month",
-        "Unlimited everything",
-        "Custom AI training",
+        "Unlimited resume analyses",
+        "White-label options",
         "Dedicated account manager",
-        "Advanced API access",
-        "White-label solutions",
         "Custom integrations",
-        "Advanced reporting suite",
-        "SLA guarantee",
-        "Priority phone support"
+        "Advanced compliance features",
+        "Multiple team access"
       ],
       cta: "Contact Sales",
       popular: false,
@@ -91,10 +61,10 @@ export default function Pricing() {
       {/* Navigation */}
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-2">
+          <Link href="/" className="flex items-center space-x-2 hover:opacity-80 transition-opacity">
             <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg"></div>
             <span className="text-xl font-bold text-slate-900">Hire & Fire</span>
-          </div>
+          </Link>
           <div className="hidden md:flex items-center space-x-8">
             <Link href="/" className="text-slate-600 hover:text-slate-900 transition-colors">Home</Link>
             <Link href="/#features" className="text-slate-600 hover:text-slate-900 transition-colors">Features</Link>
@@ -118,17 +88,11 @@ export default function Pricing() {
           Choose the perfect plan for your hiring needs. All plans include our core AI screening technology.
         </p>
         
-        <Tabs defaultValue="monthly" className="w-fit mx-auto">
-          <TabsList className="grid w-full grid-cols-2">
-            <TabsTrigger value="monthly">Monthly</TabsTrigger>
-            <TabsTrigger value="annual">Annual <Badge variant="secondary" className="ml-2 text-xs">Save 20%</Badge></TabsTrigger>
-          </TabsList>
-        </Tabs>
       </section>
 
       {/* Pricing Cards */}
       <section className="container mx-auto px-6 pb-20">
-        <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-8 max-w-7xl mx-auto">
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {plans.map((plan, index) => (
             <Card 
               key={index}

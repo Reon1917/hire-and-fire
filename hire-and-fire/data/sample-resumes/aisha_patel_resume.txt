@@ -1,0 +1,9 @@
+Aisha Patel - ML Engineer Resume
+=================================
+
+Experience: 3 years
+Skills: Python, scikit-learn, Financial Modeling
+Education: BS Mathematics, MIT
+
+This is a sample file to test the demo upload functionality.
+The system will map this to Aisha Patel's profile from our mock candidates.json

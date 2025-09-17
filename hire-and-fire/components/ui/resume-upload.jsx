@@ -11,12 +11,27 @@ export function ResumeUpload({ onAnalysisComplete }) {
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [analysisResults, setAnalysisResults] = useState([]);
   const [currentJob, setCurrentJob] = useState(null);
+  const [isDemoMode, setIsDemoMode] = useState(false);
 
-  // Load current job from session storage
+  // Load current job from session storage and check demo mode
   useEffect(() => {
-    const jobData = sessionStorage.getItem('currentJob');
-    if (jobData) {
-      setCurrentJob(JSON.parse(jobData));
+    const demoMode = process.env.NEXT_PUBLIC_DEMO_MODE === 'true';
+    setIsDemoMode(demoMode);
+    
+    if (demoMode) {
+      // Set the ML Engineer job for demo mode
+      setCurrentJob({
+        title: "Machine Learning Engineer",
+        type: "Full-time",
+        location: "San Francisco, CA (Hybrid)",
+        description: "We are seeking a talented Machine Learning Engineer to join our AI team...",
+        requirements: "• 3+ years of experience in machine learning and data science\n• Strong programming skills in Python..."
+      });
+    } else {
+      const jobData = sessionStorage.getItem('currentJob');
+      if (jobData) {
+        setCurrentJob(JSON.parse(jobData));
+      }
     }
   }, []);
 
@@ -26,7 +41,7 @@ export function ResumeUpload({ onAnalysisComplete }) {
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop,
-    accept: {
+    accept: isDemoMode ? undefined : {
       'application/pdf': ['.pdf']
     },
     multiple: true,
@@ -40,22 +55,31 @@ export function ResumeUpload({ onAnalysisComplete }) {
     const results = [];
 
     try {
+      // Use demo mode state
+      const apiEndpoint = isDemoMode ? '/api/analyze-resume-demo' : '/api/analyze-resume';
+
       for (const file of files) {
         const formData = new FormData();
         formData.append('file', file);
         
-        // Add job context if available
-        if (currentJob) {
+        // Add job context if available (only for real mode)
+        if (currentJob && !isDemoMode) {
           formData.append('jobData', JSON.stringify(currentJob));
         }
 
-        const response = await fetch('/api/analyze-resume', {
+        // Add a small delay for demo mode to simulate processing
+        if (isDemoMode) {
+          await new Promise(resolve => setTimeout(resolve, 1500));
+        }
+
+        const response = await fetch(apiEndpoint, {
           method: 'POST',
           body: formData,
         });
 
         if (!response.ok) {
-          throw new Error(`Analysis failed for ${file.name}`);
+          const errorData = await response.json();
+          throw new Error(errorData.error || `Analysis failed for ${file.name}`);
         }
 
         const result = await response.json();
@@ -87,12 +111,27 @@ export function ResumeUpload({ onAnalysisComplete }) {
 
   return (
     <div className="space-y-6">
+      {/* Demo Mode Indicator */}
+      {isDemoMode && (
+        <Card className="bg-green-50 border-green-200">
+          <CardContent className="p-4">
+            <div className="flex items-center space-x-2">
+              <Badge className="bg-green-600">DEMO MODE</Badge>
+              <p className="text-sm text-green-700">
+                Using mock candidate data for demonstration. No real PDFs are processed.
+              </p>
+            </div>
+          </CardContent>
+        </Card>
+      )}
+
       {/* Job Context Display */}
       {currentJob && (
         <Card className="bg-blue-50 border-blue-200">
           <CardHeader className="pb-4">
             <CardTitle className="text-lg text-blue-900">
               Analyzing for: {currentJob.title}
+              {isDemoMode && <Badge className="ml-2 bg-blue-600">Demo Job</Badge>}
             </CardTitle>
             <div className="text-sm text-blue-700 space-y-1">
               {currentJob.location && <p><strong>Location:</strong> {currentJob.location}</p>}
@@ -135,15 +174,19 @@ export function ResumeUpload({ onAnalysisComplete }) {
               </div>
               <div>
                 <h3 className="text-lg font-semibold text-gray-900">
-                  Upload PDF Resumes
+                  {isDemoMode ? "Upload Files for Demo" : "Upload PDF Resumes"}
                 </h3>
                 <p className="text-gray-600 mt-2">
                   {isDragActive
-                    ? "Drop PDF files here..."
+                    ? "Drop files here..."
+                    : isDemoMode 
+                    ? "Drag & drop any files here for demo, or click to browse"
                     : "Drag & drop PDF files here, or click to browse"}
                 </p>
                 <p className="text-sm text-gray-500 mt-2">
-                  Supports multiple files • Max 50MB per file • PDF format only
+                  {isDemoMode 
+                    ? "Demo mode: Any files work • Will analyze 5 mock ML engineer candidates"
+                    : "Supports multiple files • Max 50MB per file • PDF format only"}
                 </p>
               </div>
             </div>

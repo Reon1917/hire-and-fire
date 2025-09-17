@@ -1,0 +1,9 @@
+Marcus Rodriguez - ML Scientist Resume
+======================================
+
+Experience: 7 years
+Skills: Python, R, NLP, Statistics
+Education: Ph.D. Statistics, UT Austin
+
+This is a sample file to test the demo upload functionality.
+The system will map this to Marcus Rodriguez's profile from our mock candidates.json

@@ -1,0 +1,38 @@
+{
+  "title": "Machine Learning Engineer",
+  "type": "Full-time",
+  "location": "San Francisco, CA (Hybrid)",
+  "description": "We are seeking a talented Machine Learning Engineer to join our AI team and help build cutting-edge ML systems that power our products. You will work on designing, implementing, and deploying machine learning models at scale, collaborating with cross-functional teams to solve complex business problems through data-driven solutions.",
+  "requirements": "• 3+ years of experience in machine learning and data science\n• Strong programming skills in Python, with experience in ML frameworks (TensorFlow, PyTorch, scikit-learn)\n• Experience with cloud platforms (AWS, GCP, or Azure) and MLOps tools\n• Solid understanding of statistics, linear algebra, and machine learning algorithms\n• Experience with data preprocessing, feature engineering, and model evaluation\n• Knowledge of deep learning architectures (CNNs, RNNs, Transformers)\n• Experience with big data technologies (Spark, Hadoop) is a plus\n• Strong problem-solving skills and ability to work in a fast-paced environment\n• Excellent communication skills and ability to explain complex concepts to non-technical stakeholders\n• Bachelor's or Master's degree in Computer Science, Mathematics, Statistics, or related field",
+  "preferred_skills": [
+    "Python",
+    "TensorFlow",
+    "PyTorch",
+    "scikit-learn",
+    "AWS",
+    "GCP",
+    "Azure",
+    "MLOps",
+    "Deep Learning",
+    "Neural Networks",
+    "Computer Vision",
+    "NLP",
+    "Statistics",
+    "Linear Algebra",
+    "SQL",
+    "Docker",
+    "Kubernetes",
+    "Apache Spark",
+    "Git",
+    "A/B Testing"
+  ],
+  "salary_range": "$120,000 - $180,000",
+  "benefits": [
+    "Health, dental, and vision insurance",
+    "401(k) with company matching",
+    "Flexible PTO",
+    "Remote work options",
+    "Professional development budget",
+    "Stock options"
+  ]
+}

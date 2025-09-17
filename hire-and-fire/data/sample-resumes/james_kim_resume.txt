@@ -1,0 +1,9 @@
+James Kim - ML Engineer Resume
+===============================
+
+Experience: 2 years
+Skills: Python, PyTorch, AWS
+Education: MS Data Science, UW
+
+This is a sample file to test the demo upload functionality.
+The system will map this to James Kim's profile from our mock candidates.json

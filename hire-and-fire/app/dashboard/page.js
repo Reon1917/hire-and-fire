@@ -4,21 +4,47 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Dashboard() {
   const [jobs] = useState([
-    { id: 1, title: "Senior Developer", applicants: 24, status: "Active", created: "2 days ago" },
-    { id: 2, title: "Marketing Manager", applicants: 31, status: "Active", created: "1 week ago" },
-    { id: 3, title: "Sales Associate", applicants: 18, status: "Closed", created: "2 weeks ago" },
+    { 
+      id: 1, 
+      title: "Machine Learning Engineer", 
+      applicants: 47, 
+      status: "Active", 
+      created: "3 days ago",
+      location: "San Francisco, CA (Hybrid)",
+      type: "Full-time",
+      description: "We are seeking a talented Machine Learning Engineer to join our AI team and help build cutting-edge ML systems that power our products. You will work on designing, implementing, and deploying machine learning models at scale, collaborating with cross-functional teams to solve complex business problems through data-driven solutions.",
+      requirements: "• 3+ years of experience in machine learning and data science\n• Strong programming skills in Python, with experience in ML frameworks (TensorFlow, PyTorch, scikit-learn)\n• Experience with cloud platforms (AWS, GCP, or Azure) and MLOps tools\n• Solid understanding of statistics, linear algebra, and machine learning algorithms\n• Experience with data preprocessing, feature engineering, and model evaluation\n• Knowledge of deep learning architectures (CNNs, RNNs, Transformers)",
+      salary_range: "$120,000 - $180,000",
+      preferred_skills: ["Python", "TensorFlow", "PyTorch", "AWS", "GCP", "Deep Learning", "MLOps"]
+    }
   ]);
 
   const [recentActivity] = useState([
-    { id: 1, action: "New application received", job: "Senior Developer", time: "2 hours ago" },
-    { id: 2, action: "AI screening completed", job: "Marketing Manager", time: "4 hours ago" },
-    { id: 3, action: "Candidate shortlisted", job: "Senior Developer", time: "6 hours ago" },
-    { id: 4, action: "Interview scheduled", job: "Sales Associate", time: "1 day ago" },
+    { id: 1, action: "New application received", job: "Machine Learning Engineer", time: "30 minutes ago" },
+    { id: 2, action: "AI screening completed", job: "Machine Learning Engineer", time: "2 hours ago" },
+    { id: 3, action: "Candidate shortlisted", job: "Machine Learning Engineer", time: "4 hours ago" },
+    { id: 4, action: "Resume analysis completed", job: "Machine Learning Engineer", time: "6 hours ago" },
   ]);
+
+  const [selectedJob, setSelectedJob] = useState(null);
+  const [showJobDetail, setShowJobDetail] = useState(false);
+
+  const handleViewJob = (job) => {
+    setSelectedJob(job);
+    setShowJobDetail(true);
+  };
+
+  const handleAnalyzeResumes = () => {
+    // Store job data in session storage for the analyze page
+    if (selectedJob) {
+      sessionStorage.setItem('currentJob', JSON.stringify(selectedJob));
+    }
+    setShowJobDetail(false);
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -26,10 +52,10 @@ export default function Dashboard() {
       <nav className="bg-card border-b border-border">
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-2">
+            <Link href="/" className="flex items-center space-x-2 hover:opacity-80 transition-opacity">
               <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg"></div>
               <span className="text-xl font-bold text-foreground">Hire & Fire</span>
-            </div>
+            </Link>
             <div className="flex items-center space-x-4">
               <Button variant="outline" size="sm">
                 <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -48,7 +74,7 @@ export default function Dashboard() {
         <div className="flex justify-between items-center mb-8">
           <div>
             <h1 className="text-3xl font-bold text-foreground">Dashboard</h1>
-            <p className="text-muted-foreground mt-1">Welcome back! Here&apos;s what&apos;s happening with your hiring.</p>
+            <p className="text-muted-foreground mt-1">Welcome back! Here&apos;s what&apos;s happening with your ML Engineer hiring.</p>
           </div>
           <div className="flex space-x-3">
             <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700" asChild>
@@ -77,7 +103,7 @@ export default function Dashboard() {
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-muted-foreground text-sm">Active Jobs</p>
-                  <p className="text-2xl font-bold text-foreground">12</p>
+                  <p className="text-2xl font-bold text-foreground">1</p>
                 </div>
                 <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
                   <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -93,7 +119,7 @@ export default function Dashboard() {
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-muted-foreground text-sm">Total Applicants</p>
-                  <p className="text-2xl font-bold text-foreground">847</p>
+                  <p className="text-2xl font-bold text-foreground">47</p>
                 </div>
                 <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
                   <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -109,7 +135,7 @@ export default function Dashboard() {
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-muted-foreground text-sm">Shortlisted</p>
-                  <p className="text-2xl font-bold text-foreground">64</p>
+                  <p className="text-2xl font-bold text-foreground">12</p>
                 </div>
                 <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
                   <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -125,7 +151,7 @@ export default function Dashboard() {
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-muted-foreground text-sm">AI Analyzed</p>
-                  <p className="text-2xl font-bold text-foreground">234</p>
+                  <p className="text-2xl font-bold text-foreground">35</p>
                 </div>
                 <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center">
                   <svg className="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -148,22 +174,25 @@ export default function Dashboard() {
                 <div className="space-y-4">
                   {jobs.map((job) => (
                     <div key={job.id} className="flex items-center justify-between p-4 border border-border rounded-lg">
-                      <div>
-                        <h3 className="font-medium text-foreground">{job.title}</h3>
+                      <div className="flex-1">
+                        <div className="flex items-center space-x-3 mb-2">
+                          <h3 className="font-medium text-foreground">{job.title}</h3>
+                          <Badge className="bg-green-100 text-green-800">HOT</Badge>
+                        </div>
                         <p className="text-sm text-muted-foreground">{job.applicants} applicants • {job.created}</p>
+                        <p className="text-xs text-muted-foreground mt-1">{job.location} • {job.type}</p>
                       </div>
                       <div className="flex items-center space-x-3">
                         <Badge variant={job.status === 'Active' ? 'default' : 'secondary'}>
                           {job.status}
                         </Badge>
-                        <Button variant="outline" size="sm">View</Button>
+                        <Button variant="outline" size="sm" onClick={() => handleViewJob(job)}>
+                          View Details
+                        </Button>
                       </div>
                     </div>
                   ))}
                 </div>
-                <Button variant="outline" className="w-full mt-4">
-                  View All Jobs
-                </Button>
               </CardContent>
             </Card>
           </div>
@@ -186,9 +215,6 @@ export default function Dashboard() {
                     </div>
                   ))}
                 </div>
-                <Button variant="outline" className="w-full mt-4" size="sm">
-                  View All Activity
-                </Button>
               </CardContent>
             </Card>
 
@@ -198,20 +224,18 @@ export default function Dashboard() {
                 <CardTitle>Quick Actions</CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
-                <Button className="w-full justify-start" variant="outline" asChild>
-                  <Link href="/post-job">
-                    <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
-                    </svg>
-                    Create Job Posting
-                  </Link>
+                <Button className="w-full justify-start" variant="outline" onClick={() => handleViewJob(jobs[0])}>
+                  <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-5 5-5-5h5v-8h4v8z" />
+                  </svg>
+                  Analyze ML Resumes
                 </Button>
                 <Button className="w-full justify-start" variant="outline" asChild>
                   <Link href="/analyze">
                     <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-5 5-5-5h5v-8h4v8z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                     </svg>
-                    Upload & Analyze Resumes
+                    Quick Upload
                   </Link>
                 </Button>
                 <Button className="w-full justify-start" variant="outline">
@@ -225,6 +249,98 @@ export default function Dashboard() {
           </div>
         </div>
       </div>
+
+      {/* Job Detail Modal */}
+      {showJobDetail && selectedJob && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+          <div className="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+            <div className="sticky top-0 bg-white border-b p-6">
+              <div className="flex items-center justify-between">
+                <div>
+                  <h2 className="text-2xl font-bold text-gray-900">{selectedJob.title}</h2>
+                  <p className="text-gray-600">{selectedJob.location} • {selectedJob.type}</p>
+                </div>
+                <Button variant="outline" onClick={() => setShowJobDetail(false)}>
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </Button>
+              </div>
+            </div>
+            
+            <div className="p-6 space-y-6">
+              {/* Job Description */}
+              <div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">Job Description</h3>
+                <p className="text-gray-700 leading-relaxed">{selectedJob.description}</p>
+              </div>
+
+              {/* Requirements */}
+              <div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">Requirements</h3>
+                <div className="bg-gray-50 p-4 rounded-lg">
+                  <pre className="text-gray-700 whitespace-pre-line font-sans">{selectedJob.requirements}</pre>
+                </div>
+              </div>
+
+              {/* Preferred Skills */}
+              <div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">Preferred Skills</h3>
+                <div className="flex flex-wrap gap-2">
+                  {selectedJob.preferred_skills.map((skill, index) => (
+                    <Badge key={index} variant="secondary">{skill}</Badge>
+                  ))}
+                </div>
+              </div>
+
+              {/* Salary */}
+              <div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">Compensation</h3>
+                <p className="text-xl font-bold text-green-600">{selectedJob.salary_range}</p>
+              </div>
+
+              {/* Stats */}
+              <div className="grid grid-cols-3 gap-4 bg-blue-50 p-4 rounded-lg">
+                <div className="text-center">
+                  <p className="text-2xl font-bold text-blue-600">{selectedJob.applicants}</p>
+                  <p className="text-sm text-blue-600">Total Applicants</p>
+                </div>
+                <div className="text-center">
+                  <p className="text-2xl font-bold text-green-600">12</p>
+                  <p className="text-sm text-green-600">Shortlisted</p>
+                </div>
+                <div className="text-center">
+                  <p className="text-2xl font-bold text-orange-600">5</p>
+                  <p className="text-sm text-orange-600">In Demo</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="sticky bottom-0 bg-gray-50 border-t p-6">
+              <div className="flex space-x-3">
+                <Button 
+                  className="flex-1 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700" 
+                  asChild
+                  onClick={handleAnalyzeResumes}
+                >
+                  <Link href="/analyze">
+                    <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                    </svg>
+                    Analyze Resumes for this Job
+                  </Link>
+                </Button>
+                <Button variant="outline">
+                  <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                  </svg>
+                  Edit Job
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
-} 
+}

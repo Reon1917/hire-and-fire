@@ -10,17 +10,14 @@ export default function Home() {
       {/* Navigation */}
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-2">
+          <Link href="/" className="flex items-center space-x-2 hover:opacity-80 transition-opacity">
             <div className="w-8 h-8 gradient-primary rounded-lg"></div>
             <span className="text-xl font-bold text-slate-900">Hire & Fire</span>
-          </div>
+          </Link>
           <div className="hidden md:flex items-center space-x-8">
             <Link href="#features" className="text-slate-600 hover:text-slate-900 transition-colors">Features</Link>
-            <Link href="#pricing" className="text-slate-600 hover:text-slate-900 transition-colors">Pricing</Link>
-            <Link href="#about" className="text-slate-600 hover:text-slate-900 transition-colors">About</Link>
-            <Button variant="outline" asChild>
-              <Link href="/login">Sign In</Link>
-            </Button>
+            <Link href="/pricing" className="text-slate-600 hover:text-slate-900 transition-colors">Pricing</Link>
+            <Link href="#technology" className="text-slate-600 hover:text-slate-900 transition-colors">Technology</Link>
             <Button asChild>
               <Link href="/dashboard">Get Started</Link>
             </Button>
@@ -42,12 +39,9 @@ export default function Home() {
             Our AI screens hundreds of resumes in seconds, surfaces the best candidates, and gives you back hours of your day. 
             Built specifically for small and medium businesses.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+          <div className="flex justify-center mb-8">
             <Button size="lg" className="text-lg px-8 py-6 gradient-primary gradient-primary-hover" asChild>
-              <Link href="/dashboard">Start Free Trial</Link>
-            </Button>
-            <Button variant="outline" size="lg" className="text-lg px-8 py-6 border-2">
-              Watch Demo
+              <Link href="/pricing">View Pricing</Link>
             </Button>
           </div>
           <div className="flex items-center justify-center space-x-6 text-sm text-slate-500">
@@ -55,19 +49,19 @@ export default function Home() {
               <svg className="w-4 h-4 text-green-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
-              No credit card required
+              Advanced NLP Models
             </div>
             <div className="flex items-center">
               <svg className="w-4 h-4 text-green-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
-              14-day free trial
+              94% Matching Accuracy
             </div>
             <div className="flex items-center">
               <svg className="w-4 h-4 text-green-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
-              Cancel anytime
+              Enterprise Ready
             </div>
           </div>
         </div>
@@ -161,21 +155,26 @@ export default function Home() {
                     <Card className="shadow-lg">
                       <CardContent className="p-6">
                         <div className="text-center mb-4">
-                          <h4 className="font-semibold text-slate-900 mb-2">Ready to get started?</h4>
-                          <p className="text-slate-600 text-sm mb-4">Join thousands of businesses transforming their hiring process</p>
+                          <h4 className="font-semibold text-slate-900 mb-2">Powered by Advanced AI</h4>
+                          <p className="text-slate-600 text-sm mb-4">Enterprise-grade technology stack</p>
                         </div>
-                        <div className="space-y-3">
-                          <input 
-                            type="email" 
-                            placeholder="Enter your email"
-                            className="w-full px-4 py-3 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                          />
-                          <Button className="w-full gradient-primary gradient-primary-hover">
-                            Start Free Trial
-                          </Button>
-                          <p className="text-xs text-slate-500 text-center">
-                            14-day free trial • No credit card required
-                          </p>
+                        <div className="space-y-3 text-sm">
+                          <div className="flex items-center justify-between">
+                            <span className="text-slate-600">Semantic Matching:</span>
+                            <span className="font-semibold text-slate-900">SBERT Model</span>
+                          </div>
+                          <div className="flex items-center justify-between">
+                            <span className="text-slate-600">Text Processing:</span>
+                            <span className="font-semibold text-slate-900">spaCy NER</span>
+                          </div>
+                          <div className="flex items-center justify-between">
+                            <span className="text-slate-600">Ranking Algorithm:</span>
+                            <span className="font-semibold text-slate-900">LambdaMART</span>
+                          </div>
+                          <div className="flex items-center justify-between">
+                            <span className="text-slate-600">Cloud Infrastructure:</span>
+                            <span className="font-semibold text-slate-900">AWS SageMaker</span>
+                          </div>
                         </div>
                       </CardContent>
                     </Card>
@@ -187,25 +186,78 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Social Proof */}
-      <section className="section-padding">
+      {/* Technology Section */}
+      <section id="technology" className="section-padding bg-white">
         <div className="container-padding">
-          <div className="text-center mb-12">
-            <p className="text-slate-600 mb-12 text-lg">Trusted by 500+ growing businesses</p>
-            <div className="flex justify-center items-center space-x-12 opacity-60">
-              <Badge variant="outline" className="px-6 py-3 text-lg">
-                TechStart
-              </Badge>
-              <Badge variant="outline" className="px-6 py-3 text-lg">
-                GrowthCo
-              </Badge>
-              <Badge variant="outline" className="px-6 py-3 text-lg">
-                BuildFast
-              </Badge>
-              <Badge variant="outline" className="px-6 py-3 text-lg">
-                ScaleUp
-              </Badge>
-            </div>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+              Enterprise-Grade AI Technology
+            </h2>
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+              Built on cutting-edge NLP models and machine learning algorithms for unparalleled accuracy and performance
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <Card className="card-hover">
+              <CardHeader className="text-center">
+                <div className="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-4 mx-auto">
+                  <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                  </svg>
+                </div>
+                <CardTitle className="text-lg">Semantic Matching</CardTitle>
+              </CardHeader>
+              <CardContent className="text-center">
+                <p className="text-slate-600 text-sm mb-3">SBERT (Sentence-BERT) model with 94% accuracy for deep semantic understanding of job requirements and candidate profiles.</p>
+                <Badge variant="secondary" className="text-xs">23% Precision Improvement</Badge>
+              </CardContent>
+            </Card>
+
+            <Card className="card-hover">
+              <CardHeader className="text-center">
+                <div className="w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center mb-4 mx-auto">
+                  <svg className="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                  </svg>
+                </div>
+                <CardTitle className="text-lg">NLP Processing</CardTitle>
+              </CardHeader>
+              <CardContent className="text-center">
+                <p className="text-slate-600 text-sm mb-3">Advanced spaCy models with custom Named Entity Recognition for extracting skills, experience, and education data.</p>
+                <Badge variant="secondary" className="text-xs">Custom HR Entities</Badge>
+              </CardContent>
+            </Card>
+
+            <Card className="card-hover">
+              <CardHeader className="text-center">
+                <div className="w-16 h-16 bg-green-100 rounded-lg flex items-center justify-center mb-4 mx-auto">
+                  <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                  </svg>
+                </div>
+                <CardTitle className="text-lg">Smart Ranking</CardTitle>
+              </CardHeader>
+              <CardContent className="text-center">
+                <p className="text-slate-600 text-sm mb-3">LambdaMART and XGBoost algorithms provide learning-to-rank capabilities with interpretable results for HR teams.</p>
+                <Badge variant="secondary" className="text-xs">Interpretable Results</Badge>
+              </CardContent>
+            </Card>
+
+            <Card className="card-hover">
+              <CardHeader className="text-center">
+                <div className="w-16 h-16 bg-orange-100 rounded-lg flex items-center justify-center mb-4 mx-auto">
+                  <svg className="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
+                  </svg>
+                </div>
+                <CardTitle className="text-lg">Cloud Infrastructure</CardTitle>
+              </CardHeader>
+              <CardContent className="text-center">
+                <p className="text-slate-600 text-sm mb-3">AWS SageMaker deployment with auto-scaling capabilities, ensuring fast inference at enterprise scale.</p>
+                <Badge variant="secondary" className="text-xs">$250/month optimized</Badge>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
@@ -222,10 +274,7 @@ export default function Home() {
                 Join hundreds of smart business owners who&apos;ve already revolutionized their hiring process
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" variant="secondary" className="text-lg px-8 py-6" asChild>
-                  <Link href="/dashboard">Start Free Trial</Link>
-                </Button>
-                <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-white text-white hover:bg-white hover:text-blue-600">
+                <Button size="lg" variant="secondary" className="text-lg px-8 py-6 bg-white text-blue-600 hover:bg-slate-100" asChild>
                   <Link href="/pricing">View Pricing</Link>
                 </Button>
               </div>

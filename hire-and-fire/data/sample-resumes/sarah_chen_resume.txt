@@ -1,0 +1,9 @@
+Sarah Chen - ML Engineer Resume
+================================
+
+Experience: 5 years
+Skills: Python, TensorFlow, PyTorch, GCP
+Education: MS Computer Science, Stanford
+
+This is a sample file to test the demo upload functionality.
+The system will map this to Sarah Chen's profile from our mock candidates.json
