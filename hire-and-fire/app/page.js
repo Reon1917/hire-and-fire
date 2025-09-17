@@ -29,15 +29,15 @@ export default function Home() {
       <section className="container mx-auto px-6 py-16 md:py-24">
         <div className="max-w-5xl mx-auto text-center">
           <Badge className="gradient-primary mb-6">
-            🚀 Now screening 10,000+ resumes daily
+            💼 Trusted by 500+ SME businesses across APAC
           </Badge>
           <h1 className="text-4xl md:text-6xl font-bold text-slate-900 mb-6 leading-tight">
-            Stop drowning in resumes.<br/>
-            <span className="text-gradient">Start hiring smart.</span>
+            Cut hiring costs by 70%.<br/>
+            <span className="text-gradient">Scale your team faster.</span>
           </h1>
           <p className="text-xl text-slate-600 mb-8 max-w-3xl mx-auto leading-relaxed">
-            Our AI screens hundreds of resumes in seconds, surfaces the best candidates, and gives you back hours of your day. 
-            Built specifically for small and medium businesses.
+            Stop wasting ฿50,000+ monthly on recruitment agencies. Our AI-powered platform helps SMEs hire quality talent 
+            at a fraction of traditional costs - no more endless resume screening or missed opportunities.
           </p>
           <div className="flex justify-center mb-8">
             <Button size="lg" className="text-lg px-8 py-6 gradient-primary gradient-primary-hover" asChild>
@@ -49,19 +49,19 @@ export default function Home() {
               <svg className="w-4 h-4 text-green-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
-              Advanced NLP Models
+              Save ฿40K+ monthly vs agencies
             </div>
             <div className="flex items-center">
               <svg className="w-4 h-4 text-green-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
-              94% Matching Accuracy
+              Hire 5x faster than competitors
             </div>
             <div className="flex items-center">
               <svg className="w-4 h-4 text-green-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
-              Enterprise Ready
+              Built for 10-500 employee companies
             </div>
           </div>
         </div>
@@ -72,10 +72,10 @@ export default function Home() {
         <div className="container-padding">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-              Why Choose Hire & Fire?
+              SME Hiring Challenges? We&apos;ve Got Solutions.
             </h2>
             <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-              Built specifically for SMBs who need to hire fast without compromising quality
+              Stop losing top talent to big corporations. Level the playing field with enterprise-grade AI at SME prices.
             </p>
           </div>
 
@@ -84,13 +84,13 @@ export default function Home() {
               <CardHeader>
                 <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
                   <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
                   </svg>
                 </div>
-                <CardTitle className="text-xl">Lightning Fast</CardTitle>
+                <CardTitle className="text-xl">Cut Recruitment Costs</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-slate-600">Screen hundreds of resumes in minutes. Our AI reads, analyzes, and ranks candidates instantly.</p>
+                <p className="text-slate-600">Replace expensive recruitment agencies costing ฿50K+/month. Our AI platform costs 90% less while delivering better results.</p>
               </CardContent>
             </Card>
 
@@ -98,13 +98,13 @@ export default function Home() {
               <CardHeader>
                 <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
                   <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                 </div>
-                <CardTitle className="text-xl">Smart Matching</CardTitle>
+                <CardTitle className="text-xl">Compete with Big Corps</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-slate-600">Advanced algorithms match candidates to your specific job requirements and company culture.</p>
+                <p className="text-slate-600">Stop losing talent to Fortune 500 companies. Our AI identifies candidates who value SME culture and growth opportunities.</p>
               </CardContent>
             </Card>
 
@@ -112,13 +112,13 @@ export default function Home() {
               <CardHeader>
                 <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
                   <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
-                <CardTitle className="text-xl">Cost Effective</CardTitle>
+                <CardTitle className="text-xl">Scale Without HR Dept</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-slate-600">Save thousands on recruiting fees. Perfect for SMBs with limited HR budgets.</p>
+                <p className="text-slate-600">No need for expensive HR teams. One person can manage hiring for 50+ positions with our automated screening and ranking.</p>
               </CardContent>
             </Card>
           </div>
@@ -138,15 +138,15 @@ export default function Home() {
                         <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z"/>
                       </svg>
                       <blockquote className="text-xl text-slate-700 font-medium mb-4">
-                        &quot;With Hire & Fire&apos;s AI-powered screening, we cut our hiring time from weeks to days. The quality of candidates has never been better.&quot;
+                        &quot;We saved ฿180,000 in recruitment fees last quarter alone. As a 45-person fintech, we couldn&apos;t afford big agency costs. Hire & Fire helped us compete for top talent against the banks.&quot;
                       </blockquote>
                       <div className="flex items-center">
                         <div className="w-12 h-12 gradient-primary rounded-full flex items-center justify-center text-white font-semibold text-lg mr-4">
-                          SM
+                          PT
                         </div>
                         <div>
-                          <p className="font-semibold text-slate-900">Sarah Martinez</p>
-                          <p className="text-slate-600 text-sm">CEO, TechStart Solutions</p>
+                          <p className="font-semibold text-slate-900">Priya Tanaka</p>
+                          <p className="text-slate-600 text-sm">COO, FinFlow Bangkok (45 employees)</p>
                         </div>
                       </div>
                     </div>
@@ -191,10 +191,11 @@ export default function Home() {
         <div className="container-padding">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-              Enterprise-Grade AI Technology
+              Fortune 500 Technology at SME Prices
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              Built on cutting-edge NLP models and machine learning algorithms for unparalleled accuracy and performance
+              Same AI technology used by Google and Microsoft, now accessible to 10-500 employee companies. 
+              No massive IT infrastructure required.
             </p>
           </div>
 
@@ -268,10 +269,10 @@ export default function Home() {
           <Card className="gradient-primary border-0">
             <CardContent className="text-center text-white p-8 md:p-16">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Ready to Transform Your Hiring?
+                Stop Losing Talent to Big Corporations
               </h2>
               <p className="text-xl opacity-90 mb-8 max-w-2xl mx-auto">
-                Join hundreds of smart business owners who&apos;ve already revolutionized their hiring process
+                Join 500+ SME leaders who&apos;ve leveled the playing field. Compete for top talent without Fortune 500 budgets.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button size="lg" variant="secondary" className="text-lg px-8 py-6 bg-white text-blue-600 hover:bg-slate-100" asChild>
